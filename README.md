@@ -8,11 +8,11 @@ $ export AWS_SECRET_ACCESS_KEY="="~"
 
 ### terraform.tfvarsの作成
 ```
-$ cd ./
+$ cd ./terraform
 $ vi terraform.tfvars
 ```
 
-terraform.tfvarsの設定項目
+ - terraform.tfvarsの設定項目
 ```
 tag_name = "fast-api"
 tag_group = "fast-api-group"
