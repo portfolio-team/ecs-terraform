@@ -13,5 +13,6 @@ variable tag_group {
 
 locals {
   role_name = "${var.name_prefix}-role"
+  task_role_name = "${var.name_prefix}-task-role"
   ecs_task_execution_role_policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }

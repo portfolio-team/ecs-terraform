@@ -24,6 +24,9 @@ variable ecr_repository_uri {
 variable execution_role_arn {
     type = string
 }
+variable task_role_arn {
+    type = string
+}
 
 # Service
 variable logs_group_name {

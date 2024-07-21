@@ -96,4 +96,5 @@ module "ecs" {
   # Task
   ecr_repository_uri = module.ecr.repository_uri
   execution_role_arn = module.iam.execution_role_arn
+  task_role_arn       = module.iam.task_role_arn
 }
