@@ -13,6 +13,10 @@ resource "aws_ecr_repository" "default" {
 }
 
 resource "null_resource" "default" {
+  triggers = {
+    script_hash = "${filesha256("${path.module}/dockerbuild.sh")}"
+  }
+
   provisioner "local-exec" {
     command = "sh ${path.module}/dockerbuild.sh"
 
@@ -21,7 +25,7 @@ resource "null_resource" "default" {
       AWS_ACCOUNT_ID = var.account_id
       REPO_URL       = aws_ecr_repository.default.repository_url
       CONTAINER_NAME = local.container_name
-      DOCKER_DIR = local.docker_dir
+      DOCKER_COMPOSE_YAML = local.docker_compose_yaml
     }
   }
 }

@@ -2,6 +2,8 @@ version: '3'
 services:
   demo-app:
     build: .
+    image: fast-api-container
+    platform: linux/x86_64  # M1 Macの場合必要
     volumes:
       - .dockervenv:/src/.venv
       - .:/src

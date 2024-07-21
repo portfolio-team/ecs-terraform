@@ -1,5 +1,6 @@
 # python3.9のイメージをダウンロード
-FROM python:3.9-buster
+FROM --platform=linux/x86_64 python:3.9-buster
+# FROM python:3.9-buster
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /src
@@ -12,6 +13,7 @@ RUN pip install poetry
 
 # poetryの定義ファイルをコピー (存在する場合)
 COPY pyproject.toml* poetry.lock* ./
+COPY api/ ./api
 
 # poetryでライブラリをインストール (pyproject.tomlが既にある場合)
 RUN poetry config virtualenvs.in-project true
