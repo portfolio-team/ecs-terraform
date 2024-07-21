@@ -1,4 +1,6 @@
 # ecs-terraform
+参考にした文献:
+https://qiita.com/Shoma0210/items/b998a260c5d18839fb7a
 
 ### AWS Credential の設定
 ```
