@@ -22,5 +22,5 @@ variable "account_id" {
 locals {
   repository_name = "${var.name_prefix}-repository"
   container_name = "${var.name_prefix}-container"
-  docker_dir = "../../../fastapi/docker-compose.yaml"
+  docker_compose_yaml = "../../../fastapi/docker-compose.yaml"
 }
