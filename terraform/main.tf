@@ -63,6 +63,19 @@ module "cloudwatch" {
   tag_group = var.tag_group
 }
 
+# Route53
+module "route53" {
+  source = "./modules/route53"
+
+  tag_name = var.tag_name
+  tag_group = var.tag_group
+  domain_name = var.domain_name
+
+  vpc_id = module.network.vpc_id
+  alb_dns_name = module.alb.dns_name
+  alb_zone_id = module.alb.zone_id
+}
+
 # ALB
 module "alb" {
   source = "./modules/alb"
@@ -75,6 +88,8 @@ module "alb" {
   public_a_id = module.network.public_a_id
   public_c_id = module.network.public_c_id
   sg_id = module.sg.sg_id
+  acm_certificate_arn = module.route53.acm_certificate_arn
+  aws_acm_certificate_validation = module.route53.aws_acm_certificate_validation
 }
 
 # ECS

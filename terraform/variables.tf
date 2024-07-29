@@ -26,3 +26,8 @@ variable "account_id" {
 variable "sg_ingress_ip_cidr" {
     type = string
 }
+
+# Route53
+variable "domain_name" {
+    type = string
+}

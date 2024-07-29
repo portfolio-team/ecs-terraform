@@ -27,6 +27,15 @@ variable "vpc_id" {
     type = string
 }
 
+# ACM
+variable "acm_certificate_arn" {
+    type = string
+}
+variable "aws_acm_certificate_validation" {
+    type = any
+}
+
+
 locals {
   alb_name = "${var.name_prefix}-alb"
   tg_name = "${var.name_prefix}-tg"
