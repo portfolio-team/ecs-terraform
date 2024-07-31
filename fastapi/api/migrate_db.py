@@ -1,15 +1,16 @@
-from sqlalchemy import create_engine
+### alembic を 導入したので不要 ###
+# from sqlalchemy import create_engine
 
-from api.models.task import Base
+# from api.models.task import Base
 
-DB_URL = "mysql+pymysql://root@db:3306/demo?charset=utf8"
-engine = create_engine(DB_URL, echo=True)
-
-
-def reset_database():
-    Base.metadata.drop_all(bind=engine)
-    Base.metadata.create_all(bind=engine)
+# DB_URL = "mysql+pymysql://root@db:3306/demo?charset=utf8"
+# engine = create_engine(DB_URL, echo=True)
 
 
-if __name__ == "__main__":
-    reset_database()
+# def reset_database():
+#     Base.metadata.drop_all(bind=engine)
+#     Base.metadata.create_all(bind=engine)
+
+
+# if __name__ == "__main__":
+#     reset_database()
