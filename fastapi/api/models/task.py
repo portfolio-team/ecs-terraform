@@ -10,6 +10,8 @@ class Task(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String(1024))
 
+    user_id = Column(Integer, ForeignKey("user.id"))
+    user = relationship("User", back_populates="tasks")
     done = relationship("Done", back_populates="task", cascade="delete")
 
 
