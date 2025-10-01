@@ -1,9 +1,9 @@
 # fastAPI
-参考記事:
+参考の記事:
 https://zenn.dev/sh0nk/books/537bb028709ab9/viewer/f1b6fc
 
 # ecs-terraform
-参考記事:
+参考の記事:
 https://qiita.com/Shoma0210/items/b998a260c5d18839fb7a
 
 ### AWS Credential の設定
